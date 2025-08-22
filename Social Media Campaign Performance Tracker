@@ -1,0 +1,26 @@
+## 📌 Project Overview
+This project analyzes the performance of a marketing campaign using Power BI.  
+The goal was to easure **ROI (Return on Investment)** and identify which factors contributed most to campaign profitability.  
+
+The analysis was built around key performance indicators (KPIs) and DAX measures, then visualized in an interactive Power BI dashboard.
+
+---
+
+## 🔑 Key Metrics
+- **Total Impression** – the total number of times campaign ads were shown (served) to people.  
+- **Average Engagement** – measures how much, on average, people interacted with your ad/content.  
+- **Total Conversion** = the number of people who completed the desired action (purchase, signup, download, etc.).
+- **ROI (%)** = `(Profit / Marketing Spend) * 100`  
+- **Total Clicks (%)** = the sum of all recorded clicks in your campaign.
+
+---
+
+## ⚙️ DAX Measures Used
+```DAX
+Profit = SUM('Data'[Revenue]) - SUM('Data'[Marketing Spend])
+
+ROI (%) = 
+DIVIDE([Profit], SUM('Data'[Marketing Spend])) * 100
+
+Conversion Rate (%) =
+DIVIDE(SUM('Data'[Conversions]), SUM('Data'[Impressions])) * 100
